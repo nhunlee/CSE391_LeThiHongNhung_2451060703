@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm chứng CSS Selectors - ShopTLU</title>
+    <style>
+        /* --- Giao diện cơ bản để dễ nhìn --- */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
+        #app { border: 1px solid #ccc; padding: 20px; border-radius: 10px; background-color: #fff; }
+        .top-bar { padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        .dark { background-color: #2c3e50; color: white; }
+        nav a { margin-right: 15px; color: #3498db; text-decoration: none; }
+        .product { border: 1px dotted #bdc3c7; padding: 15px; margin-bottom: 15px; }
+        .featured { border: 2px solid #f1c40f; background-color: #fef9e7; }
+
+        /* --- PHẦN KIỂM CHỨNG SELECTORS --- */
+
+        /* 1. h1 -> Thêm viền đỏ gạch đứt */
+        h1 { outline: 2px dashed red; }
+
+        /* 2. .price -> Tô nền vàng */
+        .price { background-color: yellow; font-weight: bold; }
+
+        /* 3. #app header -> Thêm khung xanh dương đậm */
+        #app header { border: 3px solid #2980b9; padding: 10px; }
+
+        /* 4. nav a:first-child -> Chữ đỏ và viết hoa */
+        nav a:first-child { color: red !important; text-transform: uppercase; font-weight: bold; }
+
+        /* 5. .product.featured h2 -> Chữ màu cam, có gạch chân */
+        .product.featured h2 { color: #e67e22; text-decoration: underline; }
+
+        /* 6. article > p -> Thêm vạch kẻ màu tím bên trái */
+        article > p { border-left: 4px solid purple; padding-left: 10px; }
+
+        /* 7. a[href="/"] -> Thêm màu nền xanh lá nhạt */
+        a[href="/"] { background-color: #d5f5e3; }
+
+        /* 8. .top-bar.dark h1 -> Chữ nghiêng và đổi sang màu vàng */
+        .top-bar.dark h1 { font-style: italic; color: #f1c40f !important; }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <header class="top-bar dark">
+            <h1>ShopTLU</h1>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        
+        <main>
+            <article class="product">
+                <h2>iPhone 16</h2>
+                <p class="price">25.990.000đ</p>
+                <p>Mô tả sản phẩm iPhone thế hệ mới...</p>
+            </article>
+
+            <article class="product featured">
+                <h2>MacBook Pro</h2>
+                <p class="price">45.990.000đ</p>
+                <p>Mô tả sản phẩm MacBook dành cho dân chuyên nghiệp...</p>
+            </article>
+        </main>
+    </div>
+
+</body>
+</html>
