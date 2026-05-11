@@ -139,3 +139,30 @@ Giải thích: Từ khóa !important phá vỡ mọi quy tắc tính điểm Spe
    - `tr:nth-child(even) { ... }` (Chọn các dòng số chẵn trong bảng để làm hiệu ứng Zebra striping)
    - `tr:hover { ... }` (Hiệu ứng khi di chuột lên dòng của bảng)
 
+## Câu B3:
+
+**1. Liệt kê 10 rules + Specificity score (Từ thấp đến cao):**
+1. `*` -> Specificity: (0,0,0) - Màu: Xám
+2. `p` -> Specificity: (0,0,1) - Màu: Nâu
+3. `.text` -> Specificity: (0,1,0) - Màu: Hồng
+4. `p.text` -> Specificity: (0,1,1) - Màu: Cam
+5. `.text.highlight` -> Specificity: (0,2,0) - Màu: Vàng
+6. `p.text.highlight` -> Specificity: (0,2,1) - Màu: Xanh lá
+7. `#demo` -> Specificity: (1,0,0) - Màu: Xanh lơ (Cyan)
+8. `p#demo` -> Specificity: (1,0,1) - Màu: Xanh dương (Blue)
+9. `#demo.text` -> Specificity: (1,1,0) - Màu: Tím
+10. `p#demo.text.highlight` -> Specificity: (1,2,1) - Màu: Đỏ
+
+**2. Element cuối cùng hiển thị màu gì? Tại sao?**
+- Element cuối cùng hiển thị màu **Đỏ (Red)**.
+- Tại sao: Vì rule số 10 (`p#demo.text.highlight`) có điểm Specificity cao nhất là (1,2,1) — bao gồm 1 ID, 2 Class và 1 Thẻ (Tag). Trình duyệt luôn ưu tiên áp dụng CSS của rule có điểm số cao nhất, đánh bại và gạch bỏ tất cả các màu của 9 rule còn lại.
+
+**3. Ảnh chụp kết quả màn hình (Screenshot):**
+![alt text](B3.png)
+
+**4. Thay đổi thứ tự rules trong CSS file. Kết quả có đổi không? Giải thích.**
+- Kết quả KHÔNG THAY ĐỔI. Chữ vẫn giữ màu Đỏ.
+- Giải thích: Quy tắc Cascading (Thứ tự dòng chảy từ trên xuống dưới) chỉ được áp dụng khi hai đoạn code CSS có điểm specificity. Ở bài này, điểm Specificity của rule số 10 đang lớn hơn hẳn tất cả các rules khác, nên dù có cắt nó đem lên để ở dòng trên cùng của file CSS nó vẫn hiện màu đỏ
+
+# Phần C: Debug & suy luận
+## C
