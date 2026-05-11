@@ -165,4 +165,22 @@ Giải thích: Từ khóa !important phá vỡ mọi quy tắc tính điểm Spe
 - Giải thích: Quy tắc Cascading (Thứ tự dòng chảy từ trên xuống dưới) chỉ được áp dụng khi hai đoạn code CSS có điểm specificity. Ở bài này, điểm Specificity của rule số 10 đang lớn hơn hẳn tất cả các rules khác, nên dù có cắt nó đem lên để ở dòng trên cùng của file CSS nó vẫn hiện màu đỏ
 
 # Phần C: Debug & suy luận
-## C
+## Câu 1:
+1. Tính chiều rộng thực tế (khi dùng content-box)
+Trong chế độ mặc định content-box, width chỉ là kích thước của vùng lõi. Để ra được kích thước hộp chiếm dụng trên màn hình, ta phải cộng thêm cả Padding và Border.
+Sidebar:Chiều rộng thực = width (300) + padding (202) + border (12) = 300 + 40 + 2 = 342px
+Content:Chiều rộng thực = width (660) + padding (302) + border (12) = 660 + 60 + 2 = 722px
+
+2. Giải thích tại sao layout bị vỡ
+Tổng kích thước 2 cột: 342px + 722px = 1064px
+Kích thước của vùng chứa (Container): Chỉ có 960px
+Lý do vỡ: Hai cột cộng lại (1064px) đã vượt quá sức chứa của container (960px). Vì không đủ chỗ để đứng cạnh nhau trên cùng một hàng ngang, thuộc tính float: left sẽ tự động đẩy cột thứ 2 (Content) rớt xuống dòng bên dưới.
+
+3. Đưa ra 2 cách sửa
+Cách 1: Sử dụng border-box (Cách hiện đại, khuyên dùng)
+Ta thêm box-sizing: border-box; cho cả 2 cột. Lúc này trình duyệt sẽ ép Padding và Border ăn ngược vào trong lõi. Kích thước thật của Sidebar sẽ đúng bằng 300px và Content đúng bằng 660px. (300 + 660 = vừa khít 960px).
+
+Cách 2: Tính toán lại width thủ công (Cách cổ điển)
+Ta giữ nguyên content-box mặc định, nhưng phải tự trừ hao kích thước width bằng tay:
+Sidebar mới: width: 258px (Bởi vì 258 + 40 đệm + 2 viền = 300)
+Content mới: width: 598px (Bởi vì 598 + 60 đệm + 2 viền = 660)

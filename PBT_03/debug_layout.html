@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Layout C1</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <h2>Cách 1: Sửa bằng border-box</h2>
+        <div class="container clearfix">
+            <div class="sidebar fix-cach-1">
+                <h3>Sidebar (300px)</h3>
+                <p>Đã dùng box-sizing: border-box</p>
+            </div>
+            <div class="content fix-cach-1">
+                <h3>Content (660px)</h3>
+                <p>Đã dùng box-sizing: border-box</p>
+            </div>
+        </div>
+
+        <h2>Cách 2: Sửa bằng trừ thủ công width (Không dùng border-box)</h2>
+        <div class="container clearfix">
+            <div class="sidebar fix-cach-2">
+                <h3>Sidebar (Mới: 258px)</h3>
+                <p>Width đã bị trừ đi để bù cho padding & border</p>
+            </div>
+            <div class="content fix-cach-2">
+                <h3>Content (Mới: 598px)</h3>
+                <p>Width đã bị trừ đi để bù cho padding & border</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
