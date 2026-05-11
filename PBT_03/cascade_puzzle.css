@@ -1,0 +1,37 @@
+/* Thiết lập chung để dễ quan sát */
+body { 
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-size: 16px; 
+    color: #333; 
+}
+
+/* Quy tắc trong bài toán */
+.container { 
+    font-size: 14px; 
+    border: 1px dashed #ccc;
+    padding: 10px;
+}
+
+.card { 
+    color: blue; 
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.card .title { 
+    font-size: 20px; 
+}
+
+.card p { 
+    color: inherit; 
+}
+
+#featured .title { 
+    color: red; 
+}
+
+.highlight { 
+    color: green !important; 
+}

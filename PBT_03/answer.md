@@ -165,7 +165,7 @@ Giải thích: Từ khóa !important phá vỡ mọi quy tắc tính điểm Spe
 - Giải thích: Quy tắc Cascading (Thứ tự dòng chảy từ trên xuống dưới) chỉ được áp dụng khi hai đoạn code CSS có điểm specificity. Ở bài này, điểm Specificity của rule số 10 đang lớn hơn hẳn tất cả các rules khác, nên dù có cắt nó đem lên để ở dòng trên cùng của file CSS nó vẫn hiện màu đỏ
 
 # Phần C: Debug & suy luận
-## Câu 1:
+## Câu C1:
 1. Tính chiều rộng thực tế (khi dùng content-box)
 Trong chế độ mặc định content-box, width chỉ là kích thước của vùng lõi. Để ra được kích thước hộp chiếm dụng trên màn hình, ta phải cộng thêm cả Padding và Border.
 Sidebar:Chiều rộng thực = width (300) + padding (202) + border (12) = 300 + 40 + 2 = 342px
@@ -184,3 +184,24 @@ Cách 2: Tính toán lại width thủ công (Cách cổ điển)
 Ta giữ nguyên content-box mặc định, nhưng phải tự trừ hao kích thước width bằng tay:
 Sidebar mới: width: 258px (Bởi vì 258 + 40 đệm + 2 viền = 300)
 Content mới: width: 598px (Bởi vì 598 + 60 đệm + 2 viền = 660)
+
+## Câu C2: 
+1. "Sản phẩm A" (<h2 class="title highlight"> trong #featured)
+font-size = 20px.
+Giải thích: Thẻ này chịu ảnh hưởng của tính kế thừa từ .container (14px) và được target trực tiếp bởi rule .card .title { font-size: 20px; }. Trong CSS, style target trực tiếp luôn thắng style kế thừa
+color = green
+Giải thích: Thẻ này có 2 rule target màu sắc trực tiếp là #featured .title { color: red; } (điểm specificity là 1,1,0) và .highlight { color: green !important; } (điểm specificity là 0,1,0). Mặc dù rule ID có điểm cao hơn, nhưng từ khóa !important là quyền lực tuyệt đối, phá vỡ mọi quy tắc xếp hạng. Do đó màu xanh lá (green) chiến thắng
+
+2. "Mô tả sản phẩm" (<p> trong #featured)
+color = blue
+Giải thích: Thẻ này được target trực tiếp bởi rule .card p { color: inherit; }. Giá trị inherit ra lệnh cho thẻ <p> phải lấy đúng màu của phần tử cha gần nhất. Cha của nó là <div class="card" id="featured">. Khối .card này đang được áp dụng rule .card { color: blue; }. Vì vậy, thẻ <p> sẽ lấy màu xanh dương (blue) từ cha của nó
+
+3. "Sản phẩm B" (<h2 class="title"> trong thẻ .card thứ hai)
+font-size = 20px
+Giải thích: Tương tự Sản phẩm A, nó được target trực tiếp bởi rule .card .title { font-size: 20px; }.
+color = blue
+Giải thích: Không có rule nào target trực tiếp màu sắc cho thẻ <h2> này. Do đó, theo nguyên lý Kế thừa (Inheritance), nó sẽ đi tìm phần tử cha gần nhất có set màu để "xin" màu. Cha của nó là .card có color: blue;. Vậy nó sẽ có màu xanh dương
+
+4. "Mô tả sản phẩm B" (<p class="highlight">)
+color = green
+Giải thích: Thẻ này chịu sự cạnh tranh của 2 rule trực tiếp: .card p { color: inherit; } và .highlight { color: green !important; }. Tương tự Sản phẩm A, sự xuất hiện của !important sẽ đè bẹp tất cả. Màu xanh lá (green) chiến thắng
