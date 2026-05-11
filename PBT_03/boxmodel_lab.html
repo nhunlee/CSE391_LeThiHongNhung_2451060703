@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Lab - Phần 1 & 2</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+
+    <h1>Phần 1: Chứng minh content-box vs border-box</h1>
+    <div class="part1-container">
+        <div class="box box-content">
+            <h2>Hộp 1: content-box</h2>
+            <p>Width: 300px<br>Padding: 20px<br>Border: 5px solid</p>
+        </div>
+
+        <div class="box box-border">
+            <h2>Hộp 2: border-box</h2>
+            <p>Width: 300px<br>Padding: 20px<br>Border: 5px solid</p>
+        </div>
+    </div>
+
+    <hr style="margin: 40px 0;">
+
+    <h1>Phần 2: Layout 3 cột (Container 1000px)</h1>
+    
+    <div class="layout-container">
+        <div class="col sidebar">
+            <h3>Sidebar</h3>
+            <p>Width: 250px<br>Padding: 15px</p>
+        </div>
+        
+        <div class="col content">
+            <h3>Content</h3>
+            <p>Width: 500px<br>Padding: 20px</p>
+        </div>
+        
+        <div class="col ads">
+            <h3>Ads</h3>
+            <p>Width: 250px<br>Padding: 15px</p>
+        </div>
+    </div>
+
+</body>
+</html>  
