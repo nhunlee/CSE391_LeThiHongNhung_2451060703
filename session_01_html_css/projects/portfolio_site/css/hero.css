@@ -1,0 +1,52 @@
+/* Hero Centering & Background */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:rgb(200, 106, 255);
+    padding: 0 20px;
+}
+
+/* Typography Desktop */
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-name{
+    color:rgb(250, 204, 67);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 2.5rem;
+}
+
+/* CTA Button & Hover Effect */
+.cta-button {
+    background-color:rgb(255, 255, 255);
+    color: rgb(30, 116, 255);
+    padding: 15px 35px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    background-color: var(--color-secondary);
+}
+
+/* Responsive Mobile Typography */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+} 

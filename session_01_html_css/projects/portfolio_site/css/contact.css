@@ -1,0 +1,103 @@
+/* --- CONTACT SECTION --- */
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--color-light); /* Nền xám nhạt */
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Cột phải to hơn cột trái */
+    gap: 4rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Thông tin liên hệ */
+.contact-info h3 {
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    color: var(--color-text);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* --- FORM STYLING --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    /* Hiệu ứng chuyển màu mượt mà */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Kéo giãn ô tin nhắn theo chiều dọc */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* HIỆU ỨNG FOCUS: Khi click chuột vào ô */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb; /* Viền xanh dương đậm */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); /* Quầng sáng xanh nhạt xung quanh */
+}
+
+/* Nút Submit */
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8; /* Xanh đậm hơn khi hover */
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Tràn thành 1 cột */
+        gap: 2rem;
+        padding: 2rem;
+    }
+}

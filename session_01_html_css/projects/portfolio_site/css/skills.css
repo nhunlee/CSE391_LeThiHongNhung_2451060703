@@ -1,0 +1,45 @@
+.skills-section {
+    padding: 80px 0;
+    background-color: var(--color-light);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; /* Khoảng cách giữa các cột/hàng */
+    max-width: 900px; /* Giới hạn độ rộng của toàn bộ phần kỹ năng */
+    margin: 0 auto; /* Tự động chia đều lề 2 bên để căn giữa màn hình */
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.skill-bar {
+    background: #e2e8f0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    /* Đổi dải màu từ tím sang dải màu xanh dương (từ xanh nhạt sang xanh đậm) */
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    
+    height: 100%;
+    border-radius: 10px;
+    /* transition: width 1.5s ease-out; (nếu bạn có dòng này thì cứ giữ nguyên nhé) */
+}
+
+.skill-item {
+    margin-bottom: 1.5rem; 
+    width: 85%; 
+}
+
+.skills-section h2 {
+    text-align: center; 
+    margin-bottom: 3rem; 
+}
