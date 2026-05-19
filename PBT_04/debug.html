@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Flexbox C2 - Đã Sửa Lỗi</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+        h2 { border-bottom: 2px solid #ccc; margin-top: 50px; padding-bottom: 10px; }
+
+        .card-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+        }
+        .card { 
+            width: 30%; 
+            margin: 1.5%; 
+            background: white; 
+            border: 1px solid #ddd;
+            
+            display: flex; 
+            flex-direction: column; 
+        }
+        .card .card-img { 
+            width: 100%; 
+            height: 150px; 
+            background: #aaa; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card h3 { 
+            font-size: 18px; 
+            padding: 15px; 
+        }
+        .card .btn { 
+            padding: 10px; 
+            background: #e74c3c; 
+            color: white; 
+            text-align: center; 
+            text-decoration: none;
+            margin-top: auto; 
+        }
+
+
+        .hero {
+            height: 80vh;
+            background-color: #ffeaa7;
+            display: flex;
+            
+            justify-content: center; 
+            align-items: center;     
+        }
+        .hero-content {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border: 2px dashed #d63031;
+        }
+
+        .layout { 
+            display: flex; 
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        .sidebar { 
+            width: 250px; 
+            background: #55efc4; 
+            padding: 20px;
+            
+            flex-shrink: 0; 
+        }
+        .content { 
+            flex: 1; 
+            background: #dfe6e9; 
+            padding: 20px;
+            overflow-x: auto; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lỗi 1 (Đã Fix): Nút Mua luôn nằm sát đáy card</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-img">Ảnh 1</div>
+            <h3>Sản phẩm 1 (Nội dung ngắn)</h3>
+            <a href="#" class="btn">Mua ngay</a>
+        </div>
+        <div class="card">
+            <div class="card-img">Ảnh 2</div>
+            <h3>Sản phẩm 2 (Nội dung cố tình viết cực kỳ dài để làm card phình to ra, ép nút Mua của card 1 và card 3 bị lệch khỏi đáy nếu chưa fix)</h3>
+            <a href="#" class="btn">Mua ngay</a>
+        </div>
+        <div class="card">
+            <div class="card-img">Ảnh 3</div>
+            <h3>Sản phẩm 3</h3>
+            <a href="#" class="btn">Mua ngay</a>
+        </div>
+    </div>
+
+    <h2>Lỗi 2 (Đã Fix): Khối nội dung nằm giữa tâm tuyệt đối</h2>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Nội dung Hero</h1>
+            <p>Khối này đã được căn giữa hoàn hảo!</p>
+        </div>
+    </div>
+
+    <h2>Lỗi 3 (Đã Fix): Sidebar cứng cáp 250px</h2>
+    <div class="layout">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Tôi luôn giữ được 250px chiều rộng của mình.</p>
+        </div>
+        <div class="content">
+            <h3>Nội dung chính</h3>
+            <div style="width: 1000px; height: 100px; background: #b2bec3; line-height: 100px; text-align: center;">
+                Bức ảnh hoặc bảng dữ liệu siêu rộng 1000px
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
