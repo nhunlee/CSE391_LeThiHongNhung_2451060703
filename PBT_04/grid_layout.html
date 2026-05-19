@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Grid Layout</title>
+    <link rel="stylesheet" href="grid_layout.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <header class="header">
+            <h2>HEADER</h2>
+            <p>Trang chủ | Cửa hàng | Liên hệ</p>
+        </header>
+
+        <section class="hero">
+            <h1>SIÊU SALE MÙA HÈ - GIẢM GIÁ 50%</h1>
+            <p>Khám phá bộ sưu tập mới nhất</p>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Bộ lọc (Filter)</h3>
+            <div class="filter-group">
+                <h4>Danh mục</h4>
+                <label><input type="checkbox"> Áo nam</label><br>
+                <label><input type="checkbox"> Quần nam</label><br>
+                <label><input type="checkbox"> Phụ kiện</label>
+            </div>
+            <div class="filter-group">
+                <h4>Mức giá</h4>
+                <label><input type="checkbox"> Dưới 200k</label><br>
+                <label><input type="checkbox"> 200k - 500k</label><br>
+                <label><input type="checkbox"> Trên 500k</label>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="card card-featured">
+                <img src="https://via.placeholder.com/600x200" alt="Featured">
+                <div class="card-body">
+                    <h3>SẢN PHẨM NỔI BẬT (Span 2)</h3>
+                    <p>Card này được dùng grid-column: span 2 để chiếm diện tích lớn hơn, làm điểm nhấn.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 1</h3><p>150.000đ</p></div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 2</h3><p>250.000đ</p></div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 3</h3><p>350.000đ</p></div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 4</h3><p>120.000đ</p></div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 5</h3><p>99.000đ</p></div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Product">
+                <div class="card-body"><h3>Sản phẩm 6</h3><p>550.000đ</p></div>
+            </div>
+        </main>
+
+        <aside class="ads">
+            <h3>Quảng cáo</h3>
+            <img src="https://via.placeholder.com/160x400" alt="Banner Ads" class="ads-banner">
+        </aside>
+
+        <footer class="footer">
+            <h2>FOOTER</h2>
+            <p>&copy; 2026 E-Commerce Website. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
