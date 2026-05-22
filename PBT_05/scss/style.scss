@@ -1,0 +1,29 @@
+// Import các file partials (không cần gõ dấu gạch dưới và đuôi .scss)
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+// Áp dụng biến vào thẻ base
+body {
+    font-family: $font-primary;
+    margin: 0;
+    background-color: #f4f6f9;
+}
+
+// Layout Grid dùng Mixin Responsive
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mặc định Mobile: 1 cột
+    gap: $spacing-md;
+    padding: $spacing-lg;
+
+    // Gọi Mixin Tablet
+    @include respond-to($breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr); // Tablet: 2 cột
+    }
+
+    // Gọi Mixin Desktop
+    @include respond-to($breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr); // Desktop: 4 cột
+    }
+}

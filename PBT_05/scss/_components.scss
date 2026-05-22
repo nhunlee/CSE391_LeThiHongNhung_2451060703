@@ -1,0 +1,66 @@
+// --- Block Nesting 1: Card ---
+.card {
+    background-color: white;
+    padding: $spacing-md;
+    border-radius: 8px;
+    
+    // Gọi mixin tạo bóng đổ
+    @include card-shadow;
+
+    // Nesting con
+    .card-image {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: $spacing-sm;
+    }
+
+    .card-title {
+        color: $secondary-color;
+        font-family: $font-primary;
+        font-size: 18px;
+        margin-bottom: $spacing-sm;
+    }
+
+    // Nesting pseudo-class (hover đã xử lý ở mixin, ở đây demo thêm)
+    &:active {
+        transform: scale(0.98);
+    }
+
+    // Nesting class phụ trợ (Parent selector '&')
+    &.featured {
+        border: 2px solid $primary-color;
+        padding: $spacing-lg; /* Card nổi bật thì lề to hơn */
+    }
+}
+
+// --- Block Nesting 2: Header ---
+.header {
+    background-color: $secondary-color;
+    padding: $spacing-md;
+    @include flex-center;
+    justify-content: space-between; // Ghi đè lại justify-content của mixin
+
+    .logo {
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
+
+// --- Block Nesting 3: Button ---
+.btn {
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $font-primary;
+
+    &.btn-primary {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
