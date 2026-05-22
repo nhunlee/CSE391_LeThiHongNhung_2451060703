@@ -5,14 +5,12 @@
     }
 }
 
-// 2. Mixin giúp căn giữa bằng Flexbox
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-// 3. Mixin tạo bóng đổ cho thẻ Card (kèm hiệu ứng hover)
 @mixin card-shadow {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
