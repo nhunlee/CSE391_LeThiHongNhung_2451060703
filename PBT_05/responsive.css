@@ -1,0 +1,141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { font-size: 1.5rem; font-weight: bold; }
+.nav-menu { display: none; }
+.hamburger { font-size: 1.8rem; cursor: pointer; display: block; } 
+
+.layout-wrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar { display: none; }
+.ads-bar { display: none; } 
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.product-card h4 { margin: 10px 0 5px; }
+.product-card p { color: #e74c3c; font-weight: bold; }
+
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 15px; 
+    }
+
+    .hamburger { display: none; } 
+    .nav-menu { display: flex; gap: 20px; } 
+    .nav-menu a { color: white; text-decoration: none; font-weight: bold; }
+
+    .sidebar {
+        display: block;
+        background: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .filter-list {
+        display: flex; 
+        gap: 20px;
+        list-style: none;
+        margin-top: 10px;
+    }
+    .filter-list a { text-decoration: none; color: #3498db; }
+
+    /* Đổi Product Grid */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột */
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 16px; 
+    }
+
+    .layout-wrapper {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px; 
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 25px 20px;
+    }
+
+    /* Đổi Sidebar */
+    .sidebar { margin-bottom: 0; }
+    .filter-list {
+        flex-direction: column; 
+        gap: 12px;
+    }
+
+    .ads-bar {
+        display: block; 
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .ad-placeholder {
+        background: #ddd;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        color: #777;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    }
+}
