@@ -1,0 +1,39 @@
+.form-group { 
+    margin-bottom: 15px; 
+}
+
+label { 
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+
+input { 
+    padding: 8px; 
+    width: 300px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+input.error { 
+    border-color: red; 
+}
+
+.error-message { 
+    color: red; 
+    font-size: 13px; 
+    display: block; 
+    margin-top: 5px; 
+}
+
+table { 
+    margin-top: 20px; 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+}
